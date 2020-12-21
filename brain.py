@@ -51,3 +51,14 @@ for x, doc in enumerate(docs_x):
 
 training = numpy.array(training)
 output = numpy.array(output)
+
+net = tflearn.input_data(shape=[None, len(training[0])])
+net = tflearn.fully_connected(net, 8)
+net = tflearn.fully_connected(net, 8) 
+net = tflearn.fully_connected(net, len(output), activation='softmax') 
+net = tflearn.regression(net) 
+
+model = tflearn.DNN(net)
+
+model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
+model.save('jarvis_mind.tflearn')
