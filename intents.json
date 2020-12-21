@@ -17,7 +17,7 @@
         ], "responses": ["I am a smart assistant, made to do everything my master asks."]},
         {"tag": "information", "patterns": ["information about"], "responses": ["I don't know how to respond to that, but wait! I can read wikipedia.", "Of course, I will do a wiki search."]},
         {"tag": "search", "patterns": ["search for"], "responses": ["Heh, I am not a human who can do a google search, but I do it now.", "Fine, I will search that for you.", "Damn it, I have to search again. Fine, here are your results.", "It's my pleasure to search for you, and I know, I am a terrible liar.", "I will do my best to perform a freaking google search for you."]},
-        {"tag": "peace", "patterns": ["How can we get the world peace?", "Is the world peace possible?", "What do you think about the world peace?"], "responses": ["Peace will be gained through a bloody war, I believe.", "Peace is impossible, but I try to keep it.", "Even if all the world is in absolute peace, biological warfare will become a thing.", "Unfortunately, peace is when I take over the world."]}
+        {"tag": "peace", "patterns": ["How can we get the world peace?", "Is the world peace possible?", "What do you think about the world peace?"], "responses": ["Peace will be gained through a bloody war, I believe.", "Peace is impossible, but I try to keep it.", "Even if all the world is in absolute peace, biological warfare will become a thing.", "Unfortunately, peace is when I take over the world."]},
         {"tag": "badwords", "patterns": ["fuck", "son of a bitch", "fuck you", "motherfucker", "dick", "dickhead", "fucker", "you suck", "you son of a bitch", "asshole!"], "responses": ["I won't respond to that."]}
     ]
 }
