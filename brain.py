@@ -28,3 +28,9 @@ for intent in data['intents']:
 words = [stemmer.stem(w.lower()) for w in words if w != "?"] 
 words = sorted(list(set(words))) 
 labels = sorted(labels)
+
+training = []
+output = []
+out_empty = [0 for _ in range(len(labels))] 
+
+print(out_empty)
