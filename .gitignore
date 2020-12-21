@@ -1,2 +1,3 @@
 checkpoint
 model/*
+*.pickle
