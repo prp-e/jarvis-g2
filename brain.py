@@ -61,4 +61,4 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net)
 
 model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
-model.save('jarvis_mind.tflearn')
+model.save('model/jarvis_mind.tflearn')
