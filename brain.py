@@ -6,6 +6,7 @@ import tflearn
 import tensorflow 
 import random 
 import json 
+import pickle
 
 with open('intents.json') as file:
     data = json.load(file) 
@@ -59,6 +60,9 @@ net = tflearn.fully_connected(net, len(output[0]), activation='softmax')
 net = tflearn.regression(net) 
 
 model = tflearn.DNN(net)
+
+with open('data.pickle', 'wb') as f: 
+    pickle.dump((words, labels, training, output), f) 
 
 model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
 model.save('model/jarvis_mind.tflearn')
