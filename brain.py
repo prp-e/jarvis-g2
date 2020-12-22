@@ -56,7 +56,7 @@ except:
 
     training = numpy.array(training)
     output = numpy.array(output)
-    
+
     with open('data.pickle', 'wb') as f: 
         pickle.dump((words, labels, training, output), f) 
 
@@ -73,3 +73,18 @@ try:
 except:
     model.fit(training, output[0], n_epoch=10000, batch_size=8, show_metric=True)
     model.save('model/jarvis_mind.tflearn')
+
+
+### Here's for the chat 
+
+def bag_of_words(s, words):
+    bag = [0 for _ in range(len(words))] 
+    s_words = nltk.word_tokenize(s) 
+    s_words = [stemmer.stem(w.lower()) for w in s_words] 
+
+    for se in s_words:
+        for i, w in enumerate(words):
+            if w == se:
+                bag[i] = 1
+
+    return numpy.array(bag)
