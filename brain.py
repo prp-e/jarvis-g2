@@ -7,6 +7,7 @@ import tensorflow
 import random 
 import json 
 import pickle
+import random
 
 with open('intents.json') as file:
     data = json.load(file) 
@@ -88,3 +89,15 @@ def bag_of_words(s, words):
                 bag[i] = 1
 
     return numpy.array(bag)
+
+def chat(input_string): 
+    input_string = input_string.lower() 
+    results = model.predict(bag_of_words(input_string, words)) 
+    results_index = numpy.argmax(results) 
+    tag = labels[results_index] 
+
+    for tg in data["intents"]:
+        if tg['tag'] == tag:
+            responses = tg["responses"] 
+    
+    return random.choice(responses)
