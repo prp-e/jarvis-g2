@@ -101,3 +101,12 @@ def chat(input_string):
             responses = tg["responses"] 
     
     return random.choice(responses)
+
+    if __name__ == '__main__':
+        print("Hey, this is Jarvis Gen. 2, I still can't talk bot I can perform a text chat with you.")
+        while True:
+            message = input("You: ")
+            if message == "quit":
+                break
+            else:
+                print(f"Jarvis: {chat(message)}")
