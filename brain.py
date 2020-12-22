@@ -92,7 +92,7 @@ def bag_of_words(s, words):
 
 def chat(input_string): 
     input_string = input_string.lower() 
-    results = model.predict(bag_of_words(input_string, words)) 
+    results = model.predict([bag_of_words(input_string, words)]) 
     results_index = numpy.argmax(results) 
     tag = labels[results_index] 
 
