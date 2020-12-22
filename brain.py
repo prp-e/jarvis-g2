@@ -64,5 +64,8 @@ model = tflearn.DNN(net)
 with open('data.pickle', 'wb') as f: 
     pickle.dump((words, labels, training, output), f) 
 
-model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
-model.save('model/jarvis_mind.tflearn')
+try:
+    model.load('model/jarvis_mind.tflearn') 
+except:
+    model.fit(training, output[0], n_epoch=10000, batch_size=8, show_metric=True)
+    model.save('model/jarvis_mind.tflearn')
