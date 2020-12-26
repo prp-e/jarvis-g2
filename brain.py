@@ -72,7 +72,7 @@ model = tflearn.DNN(net)
 try:
     model.load('model/jarvis_mind.tflearn') 
 except:
-    model.fit(training, output[0], n_epoch=10000, batch_size=8, show_metric=True)
+    model.fit(training, output, n_epoch=10000, batch_size=8, show_metric=True)
     model.save('model/jarvis_mind.tflearn')
 
 
@@ -102,7 +102,7 @@ def chat(input_string):
     
     return random.choice(responses)
 
-
+"""
 if __name__ == '__main__':
     print("Hey, this is Jarvis Gen. 2, I still can't talk bot I can perform a text chat with you.")
     while True:
@@ -111,3 +111,4 @@ if __name__ == '__main__':
             break
         else:
             print(f"Jarvis: {chat(message)}")
+"""
