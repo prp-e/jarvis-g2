@@ -1,8 +1,9 @@
 {
     "intents": [
         {"tag": "greetings", "patterns": [
-            "Hello", "Hey", "Hi", "Greetings", "How are you?", "Is there anyone?", "What's up?"
-        ], "responses": ["Hello", "I am fine", "Yes, I am here at your service", "Not much"]},
+            "Hello", "Hey", "Hi", "Greetings"
+        ], "responses": ["Hello", "Howdy", "Hi"]},
+        {"tag" : "smalltak", "patterns" : ["How are you?", "Is there anyone?", "What's up?"], "responses" : ["I am fine", "Yes, I am here at your service", "Not much"]} ,
         {"tag": "goodbye", "patterns": [
             "Bye", "Goodbye", "Farewell", "See you later", "Until the next time"
         ], "responses": ["Bye", "Have a good time"]},
