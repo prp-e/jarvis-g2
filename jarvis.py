@@ -25,8 +25,12 @@ class Jarvis:
 
 if __name__ == "__main__":
     jarvis_init = Jarvis(sr.Recognizer(), pyttsx3.init())
+    jarvis_init.voice_engine.setProperty('voice', 'com.apple.speech.synthesis.voice.samantha')
     while True:
         query = jarvis_init.get_command()
-        print(query)
-        jarvis_init.voice_engine.say(brain.chat(query))
-        jarvis_init.voice_engine.runAndWait()
+        query = query.lower()
+        print("You said: ", query)
+        if query == 'goodbye':
+            jarvis_init.voice_engine.say(brain.chat(query))
+            jarvis_init.voice_engine.runAndWait()
+            break
