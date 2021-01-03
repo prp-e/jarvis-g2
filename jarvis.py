@@ -1,6 +1,7 @@
 import brain 
 import pyttsx3 
 import speech_recognition as sr 
+import webbrowser
 
 class Jarvis:
 
@@ -37,3 +38,13 @@ if __name__ == "__main__":
             jarvis_init.voice_engine.say(brain.chat(query))
             jarvis_init.voice_engine.runAndWait()
             break
+        elif "search for" in query:
+            jarvis_init.voice_engine.say(brain.chat("search for"))
+            jarvis_init.voice_engine.runAndWait() 
+            query = query.replace("search for", "")
+            jarvis_init.voice_engine.say(f"Here is some information about {query}")
+            jarvis_init.voice_engine.runAndWait()
+            webbrowser.open_new(f"https://google.com/search?q={query}")
+        else:
+            jarvis_init.voice_engine.say(brain.chat(query))
+            jarvis_init.voice_engine.runAndWait()
