@@ -58,7 +58,7 @@ if __name__ == "__main__":
             music_control = ytm.YouTubeMusic()
             song = jarvis_init.get_command().lower() 
             results = music_control.search(song) 
-            track = results['songs']['0']
+            track = results['songs'][0]
             webbrowser.open_new_tab("https://music.youtube.com/watch?v=" + track['id'] + "&list=" + track['radio']['playlist_id'])
             break
         else:
