@@ -30,6 +30,8 @@ if __name__ == "__main__":
 
     goodbye_query = ["Bye", "Goodbye", "Farewell", "See you later", "Until the next time"] 
     goodbye_query = [q.lower() for q in goodbye_query]
+
+    jarvis_init.voice_engine.say("Hey, I am Friday. A Natual Language Understanding Interface. Tell me anything you like and I'll answer you nicely.")
     while True:
         query = jarvis_init.get_command()
         query = query.lower()
