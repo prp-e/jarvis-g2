@@ -2,6 +2,7 @@ import brain
 import pyttsx3 
 import speech_recognition as sr 
 import webbrowser
+import ytm 
 
 class Jarvis:
 
@@ -33,7 +34,7 @@ if __name__ == "__main__":
 
     jarvis_init.voice_engine.say("Hey, I am Friday. A Natual Language Understanding Interface. Tell me anything you like and I'll answer you nicely.")
     jarvis_init.voice_engine.runAndWait()
-    
+
     while True:
         query = jarvis_init.get_command()
         query = query.lower()
@@ -49,6 +50,19 @@ if __name__ == "__main__":
             jarvis_init.voice_engine.say(f"Here is some information about {query}")
             jarvis_init.voice_engine.runAndWait()
             webbrowser.open_new(f"https://google.com/search?q={query}")
+        elif "play music" in query:
+            jarvis_init.voice_engine.say(brain.chat(query))
+            jarvis_init.voice_engine.runAndWait() 
+            jarvis_init.voice_engine.say("Now, give me the name of the song")
+            jarvis_init.voice_engine.runAndWait() 
+            music_control = ytm.YouTubeMusic()
+            song = jarvis_init.get_command().lower() 
+            results = music_control.search(song) 
+            track = results['songs']['0']
+            jarvis_init.voice_engine.say("Now playing " + song)
+			jarvis_init.voice_engine.runAndWait()
+			webbrowser.open_new_tab("https://music.youtube.com/watch?v=" + track['id'] + "&list=" + track['radio']['playlist_id'])
+			break
         else:
             jarvis_init.voice_engine.say(brain.chat(query))
             jarvis_init.voice_engine.runAndWait()
