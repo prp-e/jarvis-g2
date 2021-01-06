@@ -59,10 +59,8 @@ if __name__ == "__main__":
             song = jarvis_init.get_command().lower() 
             results = music_control.search(song) 
             track = results['songs']['0']
-            jarvis_init.voice_engine.say("Now playing " + song)
-			jarvis_init.voice_engine.runAndWait()
-			webbrowser.open_new_tab("https://music.youtube.com/watch?v=" + track['id'] + "&list=" + track['radio']['playlist_id'])
-			break
+            webbrowser.open_new_tab("https://music.youtube.com/watch?v=" + track['id'] + "&list=" + track['radio']['playlist_id'])
+            break
         else:
             jarvis_init.voice_engine.say(brain.chat(query))
             jarvis_init.voice_engine.runAndWait()
