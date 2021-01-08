@@ -32,6 +32,8 @@ if __name__ == "__main__":
     goodbye_query = ["Bye", "Goodbye", "Farewell", "See you later", "Until the next time"] 
     goodbye_query = [q.lower() for q in goodbye_query]
 
+    other_array = ["fine", "okay", "cool", "now", "then"]
+
     jarvis_init.voice_engine.say("Hey, I am Friday. A Natual Language Understanding Interface. Tell me anything you like and I'll answer you nicely.")
     jarvis_init.voice_engine.runAndWait()
 
@@ -44,6 +46,10 @@ if __name__ == "__main__":
             jarvis_init.voice_engine.runAndWait()
             break
         elif "search for" in query:
+            for other in other_array:
+                if other in query:
+                    query = query.replace(other, "")
+            
             jarvis_init.voice_engine.say(brain.chat("search for"))
             jarvis_init.voice_engine.runAndWait() 
             query = query.replace("search for", "")
